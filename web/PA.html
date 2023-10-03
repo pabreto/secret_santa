@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+        }
+
+        #container {
+            position: relative;
+            width: 600px; /* Adjust the width as needed */
+            height: 400px; /* Adjust the height as needed */
+        }
+
+        #videoPlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            border: none;
+            padding: 0;
+            margin: 0; 
+        }
+	#overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="playButton">Allllleeeez, c'est parti!!!</button>
+    </video>
+    <div id="container">
+        <img src="../PA.png" alt="Background Image" width="100%" height="100%">
+        <video id="videoPlayer" controls>
+            <source src="../test_roulette.mp4" type="video/mp4">
+        </video>
+	<div id="overlay"></div>
+    </div>
+
+    <script>
+        // Function to load and play the video
+        function playVideo() {
+            const video = document.getElementById('videoPlayer');
+            video.src = '../test_roulette.mp4';
+            video.play();
+        }
+
+        // Add a click event listener to the button
+        const playButton = document.getElementById('playButton');
+        playButton.addEventListener('click', playVideo);
+    </script>
+</body>
+</html>
+

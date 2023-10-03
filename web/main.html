@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Icons</title>
+    <style>
+        body {
+            background-image: url('../tous-les-corps.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .icon {
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        #passwordModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman.html')">
+    <img class="icon" src="../AL.png" alt="Icon 2" onclick="showPasswordModal('AL.html')">
+    <img class="icon" src="../Adrien.png" alt="Icon 2" onclick="showPasswordModal('Adrien.html')">
+    <img class="icon" src="../PA.png" alt="Icon 2" onclick="showPasswordModal('PA.html')">
+    <img class="icon" src="../Claire.png" alt="Icon 2" onclick="showPasswordModal('Claire.html')">
+    <img class="icon" src="../Lidia.png" alt="Icon 2" onclick="showPasswordModal('Lidia.html')">
+    <img class="icon" src="../Hubert.png" alt="Icon 2" onclick="showPasswordModal('Hubert.html')">
+    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud.html')">
+
+    <!-- Password Modal -->
+    <div id="passwordModal">
+        <div class="modal-content">
+            <h2>T'es sûr que tu essayes pas de tricher?... Alors, quel est le mot magique?...</h2>
+            <input type="password" id="passwordInput">
+            <button onclick="checkPassword()">Oui, c'est moi...</button>
+        </div>
+    </div>
+
+    <script>
+        let targetPage = '';
+
+        const passwords = {
+            'Maman.html': 'Maman',
+            'AL.html': 'AL',
+            'PA.html': 'PA',
+            'Lidia.html': 'Lidia',
+            'Arnaud.html': 'Arnaud',
+            'Claire.html': 'Claire',
+            'Adrien.html': 'Adrien',
+            'Hubert.html': 'Hubert'
+            // Add more mappings as needed
+        };
+
+        function showPasswordModal(target) {
+            targetPage = target;
+            document.getElementById('passwordModal').style.display = 'block';
+        }
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById('passwordInput').value;
+            const correctPassword = passwords[targetPage];
+
+            if (enteredPassword === correctPassword) {
+                window.location.href = targetPage;
+            } else {
+                alert('Ouuuuuuuh la triiiiche... Dernier essai, et sinon, pas de cadeau!');
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        // Initially hide the password modal
+        window.onload = function () {
+            document.getElementById('passwordModal').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
+
