@@ -7,25 +7,31 @@
     <style>
         body {
             margin: 0;
+            background-color: beige;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Adjust the height as needed */
+            height: 100vh;
+            position: relative;
         }
 
         #container {
             position: relative;
         }
 
+        #container2 {
+            position: relative;
+        }
+
         #videoPlayer {
             position: absolute;
-	    top: 60%; /* Vertically center the video */
-            left: 60%; /* Horizontally center the video */
-	    transform: translate(-50%, -50%); /* Center the video precisely */
+            top: 60%;
+            left: 60%;
+            transform: translate(-50%, -50%);
             width: 70%;
-            height: auto; /* Maintain the video's aspect ratio */
-            max-height: 100%; /* Limit the video's height if needed */
+            height: auto;
+            max-height: 100%;
             border: none;
             padding: 0;
             margin: 0;
@@ -33,11 +39,11 @@
 
         #images-container {
             display: flex;
-            align-items: center; /* Vertically align the images */
+            align-items: center;
         }
 
         img {
-            cursor: pointer; /* Add pointer cursor for interaction */
+            cursor: pointer;
         }
 
         #overlay {
@@ -45,6 +51,17 @@
             top: 0;
             left: 0;
             background: transparent;
+        }
+
+        .blinking-image {
+            position: absolute;
+            display: none;
+        }
+
+        #lutins {
+            position: absolute;
+            bottom: 0;
+            display: none;
         }
     </style>
 </head>
@@ -57,14 +74,24 @@
         <div id="overlay"></div>
     </div>
 
-    <!-- Container for images -->
     <div id="images-container">
         <img id="playButton" src="../manche-roulette.png" width="50%" height="50%">
     </div>
 
+    <div id="pere_noel">
+        <div id="container2">
+            <img class="blinking-image" src="../bulle_clique.jpeg" alt="Blinking Image" width="50%">
+            <img id="pere_noel" src="../pere-noel-PA-hub.jpeg" width="50%">
+        </div>
+    </div>
+
+    <img id="lutins" src="../lutins/PA.jpg" alt="Picture" width="30%" z-index=0>
+
     <script>
         const playButton = document.getElementById('playButton');
         const videoPlayer = document.getElementById('videoPlayer');
+        const lutinsImage = document.getElementById('lutins');
+        const blinkingImage = document.querySelector('.blinking-image');
         let isImageDown = false;
 
         // Add a click event listener to the image element
@@ -73,11 +100,22 @@
                 // Change the image source to "manche-roulette-down.png"
                 playButton.src = '../manche-roulette-down.png';
             }
-            
+
             // Play the video when the image is clicked
             videoPlayer.play();
             isImageDown = true; // Toggle the state
         });
+
+        // Add an event listener to the video's "ended" event
+        videoPlayer.addEventListener('ended', function() {
+            // When the video ends, display the lutins image
+            lutinsImage.style.display = 'block';
+        });
+
+        // JavaScript code to toggle the blinking image visibility
+        setInterval(function() {
+            blinkingImage.style.display = (blinkingImage.style.display === 'none') ? 'block' : 'none';
+        }, 500); // 500ms interval for blinking
     </script>
 </body>
 </html>

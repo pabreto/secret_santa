@@ -1,0 +1,4 @@
+1) Make PA.hmtl dynamic so that it loads the video depending on the first click 
+2) add instructions instead of making appear the elf
+3) instructions: "clique sur chaque personne pour voir qui lui fait des cadeaux avec toi"
+4) apply instructions with one personalized elf
