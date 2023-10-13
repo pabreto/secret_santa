@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        #containerroulette {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #videoPlayer {
+            position: absolute;
+            top: 50%;
+            left: 24.5%;
+            width: 70%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-manche {
+            position: relative;
+            top: 50%;
+            left: 34%;
+            width: 80%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-perenoel {
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            width: 60%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-bulle {
+            position: absolute;
+            top: 3%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-lutin-1 {
+            position: absolute;
+            top: 110%;
+            left: 60%;
+            width: 35%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-lutin-2 {
+            position: absolute;
+            top: 110%;
+            left: 80%;
+            width: 35%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+        }
+
+        .blinking-image {
+            position: absolute;
+            display: none;
+        }
+
+        #lutin11 {
+            position: absolute;
+            bottom: 0;
+            display: none;
+        }
+
+        #lutin12 {
+            position: absolute;
+            bottom: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="containerroulette">
+        <img src="../roulette.jpg" alt="Background Image" width="105%" height="100%">
+        <video id="videoPlayer">
+            <source src="../test_roulette.mp4" type="video/mp4">
+        </video>
+        <div id="overlay"></div>
+    </div>
+
+</div>
+    <div id="manche">
+        <div id="container-manche">
+            <img id="playButton" src="../manche-roulette.png" width="50%">
+        </div>
+    </div>
+
+    <div id="pere_noel">
+        <div id="container-perenoel">
+            <img id="pere_noel" src="../pere-noel-PA-hub.jpeg" width="50%">
+        </div>
+    </div>
+
+    <div id="bulle">
+        <div id="container-bulle">
+            <img class="blinking-image" src="../bulle_clique.jpeg" alt="Blinking Image" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+     
+    
+    <div id="lutin_11">
+        <div id="container-lutin-1">
+            <img id="lutin11" src="../lutins/PA.jpg" alt="Picture" width="30%" z-index=0>
+        </div>
+    </div>
+
+    <div id="lutin_12">
+        <div id="container-lutin-2">
+            <img id="lutin12" src="../lutins/Hubert.jpg" alt="Picture" width="30%" z-index=0>
+        </div>
+    </div>
+
+    <!-- <div id="lutin12">
+        <div id="container-lutin-2">
+            <img id="lutins" src="../lutins/PA.jpg" alt="Picture" width="30%" z-index=0>
+        </div>
+    </div> -->
+    <script>
+        // Get the query string including the question mark
+        const queryString = location.search;
+
+        // Remove the question mark and split the string into key-value pairs
+        const params = new URLSearchParams(queryString);
+
+        // Access the variables by their keys
+        const gifter = params.get("key");
+        alert("gifter"+gifter)
+        // Use the variables as needed
+    </script>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const lutin11Image = document.getElementById('lutin11');
+        const lutin12Image = document.getElementById('lutin12');
+        const blinkingImage = document.querySelector('.blinking-image');
+        let isImageDown = false;
+
+        // Add a click event listener to the image element
+        playButton.addEventListener('click', function() {
+            if (!isImageDown) {
+                // Change the image source to "manche-roulette-down.png"
+                playButton.src = '../manche-roulette-down.png';
+            }
+
+            // Play the video when the image is clicked
+            videoPlayer.play();
+            isImageDown = true; // Toggle the state
+        });
+
+        // Add an event listener to the video's "ended" event
+        videoPlayer.addEventListener('ended', function() {
+            // When the video ends, display the lutins image
+            lutin11Image.style.display = 'block';
+            lutin12Image.style.display = 'block';
+        });
+
+        // JavaScript code to toggle the blinking image visibility
+        setInterval(function() {
+            blinkingImage.style.display = (blinkingImage.style.display === 'none') ? 'block' : 'none';
+        }, 500); // 500ms interval for blinking
+    </script>
+</body>
+</html>
+
