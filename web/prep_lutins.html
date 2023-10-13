@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .row1 td {
+            width: 33.33%;
+        }
+
+        .row2 td {
+            width: 16.66%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const queryString = location.search;
+        const params = new URLSearchParams(queryString);
+        const gifter = params.get("key");
+    </script>
+    <table>
+        <tr >
+            <td colspan="2">
+                <img id="image1" alt="Image 1">
+            </td>
+            <td colspan="2">
+                <img id="image2" alt="Image 2">
+            </td>
+            <td colspan="2">
+                <img id="image3" alt="Image 3">
+            </td>
+        </tr>
+        <tr class="row2">
+            <td>
+                <img id="image1_1" alt="Image 1.1">
+            </td>
+            <td>
+                <img id="image1_2" alt="Image 1.2">
+            </td>
+            <td>
+                <img id="image1_3" alt="Image 1.3">
+            </td>
+            <td>
+                <img id="image2_1" alt="Image 2.1">
+            </td>
+            <td>
+                <img id="image2_2" alt="Image 2.2">
+            </td>
+            <td>
+                <img id="image2_3" alt="Image 2.3">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Set image sources dynamically using JavaScript
+        document.getElementById('image1').src = "../" + gifter+ "/" + "gifted1.png";
+        document.getElementById('image2').src = "../" + gifter+ "/" + "gifted2.png";
+        document.getElementById('image3').src = "../" + gifter+ "/" + "gifted3.png";
+        document.getElementById('image1_1').src = "../" + gifter + "/lutins/lutin11.jpg";
+        document.getElementById('image1_2').src = "../" + gifter + "/lutins/lutin12.jpg";
+        document.getElementById('image1_3').src = "../" + gifter + "/lutins/lutin21.jpg";
+        document.getElementById('image2_1').src = "../" + gifter + "/lutins/lutin22.jpg";
+        document.getElementById('image2_2').src = "../" + gifter + "/lutins/lutin31.jpg";
+        document.getElementById('image2_3').src = "../" + gifter + "/lutins/lutin32.jpg";
+    </script>
+</body>
+</html>
+
