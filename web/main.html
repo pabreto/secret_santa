@@ -41,14 +41,14 @@
     </style>
 </head>
 <body>
-    <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman.html')">
-    <img class="icon" src="../AL.png" alt="Icon 2" onclick="showPasswordModal('AL.html')">
-    <img class="icon" src="../Adrien.png" alt="Icon 2" onclick="showPasswordModal('Adrien.html')">
-    <img class="icon" src="../PA.png" alt="Icon 2" onclick="showPasswordModal('PA.html')">
-    <img class="icon" src="../Claire.png" alt="Icon 2" onclick="showPasswordModal('Claire.html')">
-    <img class="icon" src="../Lidia.png" alt="Icon 2" onclick="showPasswordModal('Lidia.html')">
-    <img class="icon" src="../Hubert.png" alt="Icon 2" onclick="showPasswordModal('Hubert.html')">
-    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud.html')">
+    <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')">
+    <img class="icon" src="../AL.png" alt="Icon 2" onclick="showPasswordModal('AL')">
+    <img class="icon" src="../Adrien.png" alt="Icon 2" onclick="showPasswordModal('Adrien')">
+    <img class="icon" src="../PA.png" alt="Icon 2" onclick="showPasswordModal('PA')">
+    <img class="icon" src="../Claire.png" alt="Icon 2" onclick="showPasswordModal('Claire')">
+    <img class="icon" src="../Lidia.png" alt="Icon 2" onclick="showPasswordModal('Lidia')">
+    <img class="icon" src="../Hubert.png" alt="Icon 2" onclick="showPasswordModal('Hubert')">
+    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud')">
 
     <!-- Password Modal -->
     <div id="passwordModal">
@@ -63,28 +63,29 @@
         let targetPage = '';
 
         const passwords = {
-            'Maman.html': 'Maman',
-            'AL.html': 'AL',
-            'PA.html': 'PA',
-            'Lidia.html': 'Lidia',
-            'Arnaud.html': 'Arnaud',
-            'Claire.html': 'Claire',
-            'Adrien.html': 'Adrien',
-            'Hubert.html': 'Hubert'
+            'Maman': 'PA',
+            'AL': 'PA',
+            'PA': 'PA',
+            'Lidia': 'PA',
+            'Arnaud': 'PA',
+            'Claire': 'PA',
+            'Adrien': 'PA',
+            'Hubert': 'PA'
             // Add more mappings as needed
         };
 
-        function showPasswordModal(target) {
-            targetPage = target;
+        function showPasswordModal(gifter) {
+            targetPage = gifter+".html";
+	    gifter2=gifter
             document.getElementById('passwordModal').style.display = 'block';
         }
 
         function checkPassword() {
             const enteredPassword = document.getElementById('passwordInput').value;
-            const correctPassword = passwords[targetPage];
+            const correctPassword = passwords[gifter2];
 
             if (enteredPassword === correctPassword) {
-                window.location.href = targetPage;
+                window.location.href = "roulette.html?key="+gifter2;
             } else {
                 alert('Ouuuuuuuh la triiiiche... Dernier essai, et sinon, pas de cadeau!');
                 document.getElementById('passwordInput').value = '';
