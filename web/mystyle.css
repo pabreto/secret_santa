@@ -119,4 +119,30 @@
             bottom: 0;
             display: none;
         }
+        table {
+            width: 100%;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+	    z-index: 100;
+        }
 
+        td {
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .row1 td {
+            width: 33.33%;
+        }
+
+        .row2 td {
+            width: 16.66%;
+        }
+	.hidden {
+            display: none;
+        }

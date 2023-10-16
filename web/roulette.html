@@ -40,22 +40,41 @@
             <img class="blinking-image" src="../bulle_clique.jpeg" alt="Blinking Image" width="50%" style="position: absolute; top: 300; left: 0;">
         </div>
     </div>
-    <div id="lutin_11">
-        <div id="container-lutin-1">
-            <img id="lutin11" src="../lutins/PA.jpg" alt="Picture" width="30%" z-index=0>
-        </div>
-    </div>
-
-    <div id="lutin_12">
-        <div id="container-lutin-2">
-            <img id="lutin12" src="../lutins/Hubert.jpg" alt="Picture" width="30%" z-index=0>
-        </div>
-    </div>
-
+    <table class="hidden">
+        <tr class="row1">
+            <td>
+                <img id="image1" alt="Image 1">
+            </td>
+            <td>
+                <img id="image2" alt="Image 2">
+            </td>
+            <td>
+                <img id="image3" alt="Image 3">
+            </td>
+        </tr>
+        <tr class="row2">
+            <td>
+                <img id="image1_1" alt="Image 1.1">
+            </td>
+            <td>
+                <img id="image1_2" alt="Image 1.2">
+            </td>
+            <td>
+                <img id="image1_3" alt="Image 1.3">
+            </td>
+            <td>
+                <img id="image2_1" alt="Image 2.1">
+            </td>
+            <td>
+                <img id="image2_2" alt="Image 2.2">
+            </td>
+            <td>
+                <img id="image2_3" alt="Image 2.3">
+            </td>
+        </tr>
+    </table>
     <script>
         const playButton = document.getElementById('playButton');
-        const lutin11Image = document.getElementById('lutin11');
-        const lutin12Image = document.getElementById('lutin12');
         const blinkingImage = document.querySelector('.blinking-image');
         let isImageDown = false;
 
@@ -69,19 +88,36 @@
             // Play the video when the image is clicked
             videoPlayer.play();
             isImageDown = true; // Toggle the state
-	    const bulleCliqueContainer = document.getElementById('bulle-clique');
+            const bulleCliqueContainer = document.getElementById('bulle-clique');
             bulleCliqueContainer.style.display = 'none';
         });
 
         // Add an event listener to the video's "ended" event
         videoPlayer.addEventListener('ended', function() {
             // When the video ends, display the lutins image
-	    const bulleCliqueContainer = document.getElementById('bulle-clique');
-	    bulleCliqueContainer.querySelector('img').src = '../bulle_instruction_1.png'; 
+            const bulleCliqueContainer = document.getElementById('bulle-clique');
+            bulleCliqueContainer.querySelector('img').src = '../bulle_instruction_1.png'; 
+	    alert("replace the text of the bubble by 'Maintenant, si tu veux savoir qui d'autre offre des cadeaux aux mêmes que toi, clique sur mon doigt (ho ho ho en plus ça rime...)'")
             bulleCliqueContainer.style.display = 'block';
-            lutin11Image.style.display = 'block';
-            lutin12Image.style.display = 'block';
-		    });
+            // Now set the image sources with "gifter"
+            document.getElementById('image1').src = "../" + gifter + "/" + "gifted1.png";
+            document.getElementById('image2').src = "../" + gifter + "/" + "gifted2.png";
+            document.getElementById('image3').src = "../" + gifter + "/" + "gifted3.png";
+            document.getElementById('image1_1').src = "../" + gifter + "/lutins/lutin11.jpg";
+            document.getElementById('image1_2').src = "../" + gifter + "/lutins/lutin12.jpg";
+            document.getElementById('image1_3').src = "../" + gifter + "/lutins/lutin21.jpg";
+            document.getElementById('image2_1').src = "../" + gifter + "/lutins/lutin22.jpg";
+            document.getElementById('image2_2').src = "../" + gifter + "/lutins/lutin31.jpg";
+            document.getElementById('image2_3').src = "../" + gifter + "/lutins/lutin32.jpg";
+        });
+
+        // Add a click event listener to the "pere_noel" image
+        document.getElementById('pere_noel').addEventListener('click', function() {
+            const table = document.querySelector('table');
+            if (table.classList.contains('hidden')) {
+                table.classList.remove('hidden');
+            }
+        });
 
         // JavaScript code to toggle the blinking image visibility
         setInterval(function() {
