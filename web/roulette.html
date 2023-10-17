@@ -29,18 +29,83 @@
         <div id="container-manche">
             <img id="playButton" src="../manche-roulette.png" width="50%">
         </div>
+
     </div>
     <div id="pere_noel">
         <div id="container-perenoel">
             <img id="pere_noel" src="../pere-noel-PA-hub.jpeg" width="50%">
         </div>
     </div>
+
     <div id="bulle-clique">
         <div id="container-bulle-clique">
             <img class="blinking-image" src="../bulle_clique.jpeg" alt="Blinking Image" width="50%" style="position: absolute; top: 300; left: 0;">
         </div>
     </div>
-    <table class="hidden">
+
+    <div id="bulle-clique2">
+        <div id="container-bulle-clique">
+            <img class="hidden" id="bulle-clique2" src="../bulle_instruction_1.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+
+    <div id="reciever1">
+        <div id="container-reciever1">
+            <img class='hidden' id="reciever1" alt="Image 1">
+        </div>
+    </div>
+
+    <div id="giver11">
+        <div id="container-giver11">
+            <img class='hidden' id="giver11">
+        </div>
+    </div>
+    
+    <div id="giver12">
+        <div id="container-giver12">
+            <img class='hidden' id="giver12">
+        </div>
+    </div>
+
+    <div id="reciever2">
+        <div id="container-reciever2">
+            <img class='hidden' id="reciever2" alt="Image 1">
+        </div>
+    </div>
+
+    <div id="giver21">
+        <div id="container-giver21">
+            <img class='hidden' id="giver21">
+        </div>
+    </div>
+    
+    <div id="giver22">
+        <div id="container-giver22">
+            <img class='hidden' id="giver22">
+        </div>
+    </div>
+    
+
+    <div id="reciever3">
+        <div id="container-reciever3">
+            <img class='hidden' id="reciever3" alt="Image 1">
+        </div>
+    </div>
+
+    <div id="giver31">
+        <div id="container-giver31">
+            <img class='hidden' id="giver31">
+        </div>
+    </div>
+    
+    <div id="giver32">
+        <div id="container-giver32">
+            <img class='hidden' id="giver32">
+        </div>
+    </div>
+    
+    <!-- <table class="hidden">
+        <div id="table_container">
         <tr class="row1">
             <td>
                 <img id="image1" alt="Image 1">
@@ -72,7 +137,7 @@
                 <img id="image2_3" alt="Image 2.3">
             </td>
         </tr>
-    </table>
+    </table> -->
     <script>
         const playButton = document.getElementById('playButton');
         const blinkingImage = document.querySelector('.blinking-image');
@@ -90,33 +155,52 @@
             isImageDown = true; // Toggle the state
             const bulleCliqueContainer = document.getElementById('bulle-clique');
             bulleCliqueContainer.style.display = 'none';
+            
         });
 
         // Add an event listener to the video's "ended" event
         videoPlayer.addEventListener('ended', function() {
             // When the video ends, display the lutins image
-            const bulleCliqueContainer = document.getElementById('bulle-clique');
-            bulleCliqueContainer.querySelector('img').src = '../bulle_instruction_1.png'; 
-	    alert("replace the text of the bubble by 'Maintenant, si tu veux savoir qui d'autre offre des cadeaux aux mêmes que toi, clique sur mon doigt (ho ho ho en plus ça rime...)'")
+            // document.getElementById('reciever1').src = "../bulle-clique.png";
+            const bulleCliqueContainer = document.getElementById('bulle-clique2');
+            bulleCliqueContainer.querySelector('img').classList.remove('hidden');
             bulleCliqueContainer.style.display = 'block';
+            
             // Now set the image sources with "gifter"
-            document.getElementById('image1').src = "../" + gifter + "/" + "gifted1.png";
-            document.getElementById('image2').src = "../" + gifter + "/" + "gifted2.png";
-            document.getElementById('image3').src = "../" + gifter + "/" + "gifted3.png";
-            document.getElementById('image1_1').src = "../" + gifter + "/lutins/lutin11.jpg";
-            document.getElementById('image1_2').src = "../" + gifter + "/lutins/lutin12.jpg";
-            document.getElementById('image1_3').src = "../" + gifter + "/lutins/lutin21.jpg";
-            document.getElementById('image2_1').src = "../" + gifter + "/lutins/lutin22.jpg";
-            document.getElementById('image2_2').src = "../" + gifter + "/lutins/lutin31.jpg";
-            document.getElementById('image2_3').src = "../" + gifter + "/lutins/lutin32.jpg";
+
+            document.getElementById('reciever1').querySelector('img').src = "../" + gifter + "/" + "gifted1.png";
+            document.getElementById('giver11').querySelector('img').src = "../" + gifter + "/lutins/lutin11.jpg";
+            document.getElementById('giver12').querySelector('img').src = "../" + gifter + "/lutins/lutin12.jpg";
+
+            document.getElementById('reciever2').querySelector('img').src = "../" + gifter + "/" + "gifted2.png";
+            document.getElementById('giver21').querySelector('img').src = "../" + gifter + "/lutins/lutin21.jpg";
+            document.getElementById('giver22').querySelector('img').src = "../" + gifter + "/lutins/lutin22.jpg";
+
+            document.getElementById('reciever3').querySelector('img').src = "../" + gifter + "/" + "gifted3.png";
+            document.getElementById('giver31').querySelector('img').src = "../" + gifter + "/lutins/lutin31.jpg";
+            document.getElementById('giver32').querySelector('img').src = "../" + gifter + "/lutins/lutin32.jpg";
+
         });
 
         // Add a click event listener to the "pere_noel" image
         document.getElementById('pere_noel').addEventListener('click', function() {
-            const table = document.querySelector('table');
-            if (table.classList.contains('hidden')) {
-                table.classList.remove('hidden');
-            }
+            document.getElementById('reciever1').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver11').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver12').querySelector('img').classList.remove('hidden')
+
+            document.getElementById('reciever2').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver21').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver22').querySelector('img').classList.remove('hidden')
+
+            document.getElementById('reciever3').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver31').querySelector('img').classList.remove('hidden')
+            document.getElementById('giver32').querySelector('img').classList.remove('hidden')
+            // const r1Container = document.getElementById('reciever1');
+            // r1Container.querySelector('img').classList.remove('hidden')
+            // const table = document.querySelector('table');
+            // if (table.classList.contains('hidden')) {
+            //     table.classList.remove('hidden');
+            // }
         });
 
         // JavaScript code to toggle the blinking image visibility

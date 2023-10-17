@@ -6,16 +6,113 @@
     <title>Noël tout les corps 2023</title>
     <style>
         body {
-            background-image: url('../tous-les-corps.png');
+            background-image: url('../main_bckg.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             text-align: center;
         }
 
+        #container-maman {
+            position: absolute;
+            top: 17%;
+            left: -5;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        #container-PA {
+            position: absolute;
+            top: 17%;
+            left: 23%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-lidia {
+            position: absolute;
+            top: 17%;
+            left: 46%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-claire {
+            position: absolute;
+            top: 17%;
+            left: 68%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-adrien {
+            position: absolute;
+            top: 57%;
+            left: 0%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-arnaud {
+            position: absolute;
+            top: 57%;
+            left: 23%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-AL {
+            position: absolute;
+            top: 57%;
+            left: 46%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-hubert {
+            position: absolute;
+            top: 57%;
+            left: 68%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
         .icon {
             cursor: pointer;
-            margin: 20px;
+            margin: 0;
         }
 
         #passwordModal {
@@ -41,14 +138,61 @@
     </style>
 </head>
 <body>
-    <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')">
+    <div id="maman">
+        <div id="container-maman">
+            <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')" width="50%">
+        </div>
+    </div>
+
+    <div id="PA">
+        <div id="container-PA">
+            <img class="icon" src="../PA.png" alt="Icon 1" onclick="showPasswordModal('PA')" width="50%">
+        </div>
+    </div>
+
+    <div id="lidia">
+        <div id="container-lidia">
+            <img class="icon" src="../Lidia.png" alt="Icon 1" onclick="showPasswordModal('Lidia')" width="50%">
+        </div>
+    </div>
+
+    <div id="claire">
+        <div id="container-claire">
+            <img class="icon" src="../Claire.png" alt="Icon 1" onclick="showPasswordModal('Claire')" width="50%">
+        </div>
+    </div>
+
+    <div id="adrien">
+        <div id="container-adrien">
+            <img class="icon" src="../Adrien.png" alt="Icon 1" onclick="showPasswordModal('Adrien')" width="50%">
+        </div>
+    </div>
+
+    <div id="arnaud">
+        <div id="container-arnaud">
+            <img class="icon" src="../Arnaud.png" alt="Icon 1" onclick="showPasswordModal('Arnaud')" width="50%">
+        </div>
+    </div>
+
+    <div id="AL">
+        <div id="container-AL">
+            <img class="icon" src="../AL.png" alt="Icon 1" onclick="showPasswordModal('AL')" width="50%">
+        </div>
+    </div>
+
+    <div id="hubert">
+        <div id="container-hubert">
+            <img class="icon" src="../Hubert.png" alt="Icon 1" onclick="showPasswordModal('Hubert')" width="50%">
+        </div>
+    </div>
+    <!-- <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')">
     <img class="icon" src="../AL.png" alt="Icon 2" onclick="showPasswordModal('AL')">
     <img class="icon" src="../Adrien.png" alt="Icon 2" onclick="showPasswordModal('Adrien')">
     <img class="icon" src="../PA.png" alt="Icon 2" onclick="showPasswordModal('PA')">
     <img class="icon" src="../Claire.png" alt="Icon 2" onclick="showPasswordModal('Claire')">
     <img class="icon" src="../Lidia.png" alt="Icon 2" onclick="showPasswordModal('Lidia')">
     <img class="icon" src="../Hubert.png" alt="Icon 2" onclick="showPasswordModal('Hubert')">
-    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud')">
+    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud')"> -->
 
     <!-- Password Modal -->
     <div id="passwordModal">
