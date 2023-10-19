@@ -1,4 +1,4 @@
-1) Make PA.hmtl dynamic so that it loads the video depending on the first click 
-2) add instructions instead of making appear the elf
-3) instructions: "clique sur chaque personne pour voir qui lui fait des cadeaux avec toi"
-4) apply instructions with one personalized elf
+1) Adjust size of head of green elves 
+2) Avoid having 2 same faces on 1st frame
+3) Export dict to file for checking by cousins
+4) Change passwords
