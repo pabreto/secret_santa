@@ -2,3 +2,6 @@
 2) Avoid having 2 same faces on 1st frame
 3) Export dict to file for checking by cousins
 4) Change passwords
+5) Forbid having 2 people gifting to the same 3?
+6) Add Adèle et Louise? (et Mélindrou et Taïque?)
+7) Forbid click on pere noel before end of video
