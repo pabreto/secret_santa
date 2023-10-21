@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noël tout les corps 2023</title>
+    <style>
+        body {
+            background-image: url('pics/main_bckg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        #container-maman {
+            position: absolute;
+            top: 17%;
+            left: -5;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        #container-PA {
+            position: absolute;
+            top: 17%;
+            left: 23%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-lidia {
+            position: absolute;
+            top: 17%;
+            left: 46%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-claire {
+            position: absolute;
+            top: 17%;
+            left: 68%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-adrien {
+            position: absolute;
+            top: 57%;
+            left: 0%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-arnaud {
+            position: absolute;
+            top: 57%;
+            left: 23%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-AL {
+            position: absolute;
+            top: 57%;
+            left: 46%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #container-hubert {
+            position: absolute;
+            top: 57%;
+            left: 68%;
+            width: 30%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .icon {
+            cursor: pointer;
+            margin: 0;
+        }
+
+        #passwordModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="maman">
+        <div id="container-maman">
+            <img class="icon" src="pics/Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')" width="50%">
+        </div>
+    </div>
+
+    <div id="PA">
+        <div id="container-PA">
+            <img class="icon" src="pics/PA.png" alt="Icon 1" onclick="showPasswordModal('PA')" width="50%">
+        </div>
+    </div>
+
+    <div id="lidia">
+        <div id="container-lidia">
+            <img class="icon" src="pics/Lidia.png" alt="Icon 1" onclick="showPasswordModal('Lidia')" width="50%">
+        </div>
+    </div>
+
+    <div id="claire">
+        <div id="container-claire">
+            <img class="icon" src="pics/Claire.png" alt="Icon 1" onclick="showPasswordModal('Claire')" width="50%">
+        </div>
+    </div>
+
+    <div id="adrien">
+        <div id="container-adrien">
+            <img class="icon" src="pics/Adrien.png" alt="Icon 1" onclick="showPasswordModal('Adrien')" width="50%">
+        </div>
+    </div>
+
+    <div id="arnaud">
+        <div id="container-arnaud">
+            <img class="icon" src="pics/Arnaud.png" alt="Icon 1" onclick="showPasswordModal('Arnaud')" width="50%">
+        </div>
+    </div>
+
+    <div id="AL">
+        <div id="container-AL">
+            <img class="icon" src="pics/AL.png" alt="Icon 1" onclick="showPasswordModal('AL')" width="50%">
+        </div>
+    </div>
+
+    <div id="hubert">
+        <div id="container-hubert">
+            <img class="icon" src="pics/Hubert.png" alt="Icon 1" onclick="showPasswordModal('Hubert')" width="50%">
+        </div>
+    </div>
+    <!-- <img class="icon" src="../Maman.png" alt="Icon 1" onclick="showPasswordModal('Maman')">
+    <img class="icon" src="../AL.png" alt="Icon 2" onclick="showPasswordModal('AL')">
+    <img class="icon" src="../Adrien.png" alt="Icon 2" onclick="showPasswordModal('Adrien')">
+    <img class="icon" src="../PA.png" alt="Icon 2" onclick="showPasswordModal('PA')">
+    <img class="icon" src="../Claire.png" alt="Icon 2" onclick="showPasswordModal('Claire')">
+    <img class="icon" src="../Lidia.png" alt="Icon 2" onclick="showPasswordModal('Lidia')">
+    <img class="icon" src="../Hubert.png" alt="Icon 2" onclick="showPasswordModal('Hubert')">
+    <img class="icon" src="../Arnaud.png" alt="Icon 2" onclick="showPasswordModal('Arnaud')"> -->
+
+    <!-- Password Modal -->
+    <div id="passwordModal">
+        <div class="modal-content">
+            <h2>T'es sûr que tu essayes pas de tricher?... Alors, quel est le mot magique?...</h2>
+            <input type="password" id="passwordInput">
+            <button onclick="checkPassword()">Oui, c'est moi...</button>
+        </div>
+    </div>
+
+    <script>
+        let targetPage = '';
+
+        const passwords = {
+            'Maman': 'PA',
+            'AL': 'PA',
+            'PA': 'PA',
+            'Lidia': 'PA',
+            'Arnaud': 'PA',
+            'Claire': 'PA',
+            'Adrien': 'PA',
+            'Hubert': 'PA'
+            // Add more mappings as needed
+        };
+
+        function showPasswordModal(gifter) {
+            targetPage = gifter+".html";
+	    gifter2=gifter
+            document.getElementById('passwordModal').style.display = 'block';
+        }
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById('passwordInput').value;
+            const correctPassword = passwords[gifter2];
+
+            if (enteredPassword === correctPassword) {
+                window.location.href = "roulette.html?key="+gifter2;
+            } else {
+                alert('Ouuuuuuuh la triiiiche... Dernier essai, et sinon, pas de cadeau!');
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        // Initially hide the password modal
+        window.onload = function () {
+            document.getElementById('passwordModal').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
+
