@@ -1,5 +1,5 @@
 1) Adjust size of head of green elves 
-2) Avoid having 2 same faces on 1st frame
+2) Avoid having 2 same faces on 1st frame -> done!
 3) Export dict to file for checking by cousins
 4) Change passwords
 5) Forbid having 2 people gifting to the same 3?
