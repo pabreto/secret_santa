@@ -49,6 +49,19 @@
         </div>
     </div>
 
+    <div id="bulle-pret">
+        <div id="container-bulle-pret">
+            <img class="hidden" id="bulle-pret" src="pics/bulle_pret.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+
+    <div id="bulle-finale">
+        <div id="container-bulle-clique">
+            <img class="hidden" id="bulle-finale" src="pics/bulle_finale.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+
+
     <div id="reciever1">
         <div id="container-reciever1">
             <img class='hidden' id="reciever1" alt="Image 1">
@@ -104,40 +117,6 @@
         </div>
     </div>
     
-    <!-- <table class="hidden">
-        <div id="table_container">
-        <tr class="row1">
-            <td>
-                <img id="image1" alt="Image 1">
-            </td>
-            <td>
-                <img id="image2" alt="Image 2">
-            </td>
-            <td>
-                <img id="image3" alt="Image 3">
-            </td>
-        </tr>
-        <tr class="row2">
-            <td>
-                <img id="image1_1" alt="Image 1.1">
-            </td>
-            <td>
-                <img id="image1_2" alt="Image 1.2">
-            </td>
-            <td>
-                <img id="image1_3" alt="Image 1.3">
-            </td>
-            <td>
-                <img id="image2_1" alt="Image 2.1">
-            </td>
-            <td>
-                <img id="image2_2" alt="Image 2.2">
-            </td>
-            <td>
-                <img id="image2_3" alt="Image 2.3">
-            </td>
-        </tr>
-    </table> -->
     <script>
         const playButton = document.getElementById('playButton');
         const blinkingImage = document.querySelector('.blinking-image');
@@ -166,6 +145,9 @@
             bulleCliqueContainer.querySelector('img').classList.remove('hidden');
             bulleCliqueContainer.style.display = 'block';
             
+            // const bulleClique2Container = document.getElementById('bulle-pret');
+            // bulleClique2Container.querySelector('img').classList.remove('hidden');
+            // bulleClique2Container.style.display = 'block';
             // Now set the image sources with "gifter"
 
             document.getElementById('reciever1').querySelector('img').src = gifter + "/" + "gifted1.png";
@@ -179,6 +161,10 @@
             document.getElementById('reciever3').querySelector('img').src =  gifter + "/" + "gifted3.png";
             document.getElementById('giver31').querySelector('img').src = gifter + "/lutins/lutin31.jpg";
             document.getElementById('giver32').querySelector('img').src =  gifter + "/lutins/lutin32.jpg";
+
+            // const bulleCliqueContainer = document.getElementById('bulle-finale');
+            // bulleCliqueContainer.querySelector('img').classList.remove('hidden');
+            // bulleCliqueContainer.style.display = 'block';
 
         });
 
@@ -195,6 +181,30 @@
             document.getElementById('reciever3').querySelector('img').classList.remove('hidden')
             document.getElementById('giver31').querySelector('img').classList.remove('hidden')
             document.getElementById('giver32').querySelector('img').classList.remove('hidden')
+            const bulleCliqueContainer = document.getElementById('bulle-clique2');
+            bulleCliqueContainer.remove()
+
+            // const bullepretContainer = document.getElementById('bulle-pret');
+            // bullepretContainer.style.display = 'block';
+            const bullefinaleContainer = document.getElementById('bulle-finale');
+            bullefinaleContainer.querySelector('img').classList.remove('hidden');
+            bullefinaleContainer.style.display = 'block';
+
+            const bullepretContainer = document.getElementById('bulle-pret');
+            bullepretContainer.querySelector('img').classList.remove('hidden');
+            bullepretContainer.style.display = 'block';
+            
+            document.getElementById('bulle-pret').addEventListener('click', function() {
+                const perenoelContainer = document.getElementById('pere_noel');
+                perenoelContainer.remove()
+                const bulle1Container = document.getElementById('bulle-finale');
+                bulle1Container.remove()
+                const bulle2Container = document.getElementById('bulle-pret');
+                bulle2Container.remove()
+                
+            });
+            // document.getElementById('bulle-pret').addEventListener('click', function() {
+            // })
             // const r1Container = document.getElementById('reciever1');
             // r1Container.querySelector('img').classList.remove('hidden')
             // const table = document.querySelector('table');
