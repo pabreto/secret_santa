@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>roulette</title>
+    <title>Roulette de Noel</title>
     <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
     </div>
     <div id="pere_noel">
         <div id="container-perenoel">
-            <img id="pere_noel" src="pics/pere-noel-PA-hub.jpeg" width="50%">
+            <img id="img_pere_noel" src="pics/pere-noel-PA-hub.jpeg" width="50%">
         </div>
     </div>
 
@@ -195,13 +195,14 @@
             bullepretContainer.style.display = 'block';
             
             document.getElementById('bulle-pret').addEventListener('click', function() {
-                const perenoelContainer = document.getElementById('pere_noel');
-                perenoelContainer.remove()
-                const bulle1Container = document.getElementById('bulle-finale');
-                bulle1Container.remove()
+                const bulle1Container = document.getElementById('bulle-finale').querySelector('img');
+                bulle1Container.src = "pics/adele_et_louise_bulle.png"
+   //             const bulle1Container = document.getElementById('bulle-finale');
+   //             bulle1Container.remove()
                 const bulle2Container = document.getElementById('bulle-pret');
                 bulle2Container.remove()
-                
+                const perenoelimg = document.getElementById('pere_noel').querySelector('img')
+                perenoelimg.src = "pics/bebes.jpg"
             });
             // document.getElementById('bulle-pret').addEventListener('click', function() {
             // })
