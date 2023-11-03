@@ -70,6 +70,19 @@
             margin: 0;
         }
 
+        #container-arrow {
+            position: absolute;
+            top: 25%;
+            left: 67%;
+            transform: translate(-50%, -50%);
+            width: 25%;
+            height: auto;
+            max-height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
         #container-bulle-clique2 {
             position: absolute;
             top: 2%;
@@ -218,6 +231,11 @@
         }
 
         .blinking-image {
+            position: absolute;
+            display: none;
+        }
+
+        .blinking-arrow {
             position: absolute;
             display: none;
         }

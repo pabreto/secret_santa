@@ -42,6 +42,18 @@
             <img class="blinking-image" src="pics/bulle_clique.jpeg" alt="Blinking Image" width="50%" style="position: absolute; top: 300; left: 0;">
         </div>
     </div>
+    <div id="arrow">
+        <div id="container-arrow">
+            <img  src="pics/arrow.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+    <div id="blinking-arrow-light">
+        <div id="container-arrow">
+            <img class="blinking-arrow" src="pics/arrow_lights.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+
+
 
     <div id="bulle-clique2">
         <div id="container-bulle-clique">
@@ -120,6 +132,8 @@
     <script>
         const playButton = document.getElementById('playButton');
         const blinkingImage = document.querySelector('.blinking-image');
+        const blinkingArrow = document.querySelector('.blinking-arrow');
+
         let isImageDown = false;
 
         // Add a click event listener to the image element
@@ -152,10 +166,10 @@
 
             document.getElementById('reciever1').querySelector('img').src = gifter + "/" + "gifted1.png";
             document.getElementById('giver11').querySelector('img').src = gifter + "/lutins/lutin11.jpg";
-            document.getElementById('giver12').querySelector('img').src = gifter + "/lutins/lutin12.jpg";
+            document.getElementById('giver12').querySelector('img').src = gifter + "/lutins/lutin12.png";
 
             document.getElementById('reciever2').querySelector('img').src = gifter + "/" + "gifted2.png";
-            document.getElementById('giver21').querySelector('img').src =  gifter + "/lutins/lutin21.jpg";
+            document.getElementById('giver21').querySelector('img').src =  gifter + "/lutins/lutin21.png";
             document.getElementById('giver22').querySelector('img').src =  gifter + "/lutins/lutin22.jpg";
 
             document.getElementById('reciever3').querySelector('img').src =  gifter + "/" + "gifted3.png";
@@ -217,6 +231,9 @@
         // JavaScript code to toggle the blinking image visibility
         setInterval(function() {
             blinkingImage.style.display = (blinkingImage.style.display === 'none') ? 'block' : 'none';
+        }, 500); // 500ms interval for blinking
+        setInterval(function() {
+            blinkingArrow.style.display = (blinkingArrow.style.display === 'none') ? 'block' : 'none';
         }, 500); // 500ms interval for blinking
     </script>
 </body>
