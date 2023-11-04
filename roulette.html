@@ -21,8 +21,11 @@
             'Adri1': 'Adrien',
             'Hioubeurte': 'Hubert'
         };
-	const gifter = url2gifter[urlkey]
-//	alert("gifter",gifter)
+    	if (!(urlkey in url2gifter) || urlkey === "") {
+//	    if urlkey not in url2gifter.keys() or urlkey == "":
+		alert("Non mais j'y crois pas... T'es en train d'essayer d'essayer d'espionner les cadeaux des autres ou quoi?! On va dire que c'est une erreur... Du coup reviens à la page d'accueil et recommence!");
+	}
+	const gifter = url2gifter[urlkey];
 
     </script>
     <div id="containerroulette">
