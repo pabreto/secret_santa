@@ -10,7 +10,20 @@
     <script>
         const queryString = location.search;
         const params = new URLSearchParams(queryString);
-        const gifter = params.get("key");
+        const urlkey = params.get("key");
+	url2gifter = {
+            'Maamaan': 'Maman',
+            'AnneL': 'AL',
+            'PierreAn': 'PA',
+            'Lidiia': 'Lidia',
+            'Arno': 'Arnaud',
+            'Klaire': 'Claire',
+            'Adri1': 'Adrien',
+            'Hioubeurte': 'Hubert'
+        };
+	const gifter = url2gifter[urlkey]
+//	alert("gifter",gifter)
+
     </script>
     <div id="containerroulette">
         <img src="pics/roulette.jpg" alt="Background Image" width="105%" height="100%">
