@@ -161,8 +161,14 @@
             isImageDown = true; // Toggle the state
             const bulleCliqueContainer = document.getElementById('bulle-clique');
             bulleCliqueContainer.style.display = 'none';
-            
-        });
+
+            // Hide the blinking arrow
+            const blinkingArrowContainer = document.getElementById('blinking-arrow-light');
+            blinkingArrowContainer.style.display = 'none'; 
+            const blinkingImage = document.getElementById('arrow');
+            blinkingImage.style.display = 'none'; 
+
+});
 
         // Add an event listener to the video's "ended" event
         videoPlayer.addEventListener('ended', function() {
