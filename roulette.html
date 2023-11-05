@@ -10,7 +10,23 @@
     <script>
         const queryString = location.search;
         const params = new URLSearchParams(queryString);
-        const gifter = params.get("key");
+        const urlkey = params.get("key");
+	url2gifter = {
+            'Maamaan': 'Maman',
+            'AnneL': 'AL',
+            'PierreAn': 'PA',
+            'Lidiia': 'Lidia',
+            'Arno': 'Arnaud',
+            'Klaire': 'Claire',
+            'Adri1': 'Adrien',
+            'Hioubeurte': 'Hubert'
+        };
+    	if (!(urlkey in url2gifter) || urlkey === "") {
+//	    if urlkey not in url2gifter.keys() or urlkey == "":
+		alert("Non mais j'y crois pas... T'es en train d'essayer d'essayer d'espionner les cadeaux des autres ou quoi?! On va dire que c'est une erreur... Du coup reviens à la page d'accueil et recommence!");
+	}
+	const gifter = url2gifter[urlkey];
+
     </script>
     <div id="containerroulette">
         <img src="pics/roulette.jpg" alt="Background Image" width="105%" height="100%">
@@ -42,6 +58,18 @@
             <img class="blinking-image" src="pics/bulle_clique.jpeg" alt="Blinking Image" width="50%" style="position: absolute; top: 300; left: 0;">
         </div>
     </div>
+    <div id="arrow">
+        <div id="container-arrow">
+            <img  src="pics/arrow.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+    <div id="blinking-arrow-light">
+        <div id="container-arrow">
+            <img class="blinking-arrow" src="pics/arrow_lights.png" width="50%" style="position: absolute; top: 300; left: 0;">
+        </div>
+    </div>
+
+
 
     <div id="bulle-clique2">
         <div id="container-bulle-clique">
@@ -120,6 +148,8 @@
     <script>
         const playButton = document.getElementById('playButton');
         const blinkingImage = document.querySelector('.blinking-image');
+        const blinkingArrow = document.querySelector('.blinking-arrow');
+
         let isImageDown = false;
 
         // Add a click event listener to the image element
@@ -134,8 +164,14 @@
             isImageDown = true; // Toggle the state
             const bulleCliqueContainer = document.getElementById('bulle-clique');
             bulleCliqueContainer.style.display = 'none';
-            
-        });
+
+            // Hide the blinking arrow
+            const blinkingArrowContainer = document.getElementById('blinking-arrow-light');
+            blinkingArrowContainer.style.display = 'none'; 
+            const blinkingImage = document.getElementById('arrow');
+            blinkingImage.style.display = 'none'; 
+
+});
 
         // Add an event listener to the video's "ended" event
         videoPlayer.addEventListener('ended', function() {
@@ -151,16 +187,16 @@
             // Now set the image sources with "gifter"
 
             document.getElementById('reciever1').querySelector('img').src = gifter + "/" + "gifted1.png";
-            document.getElementById('giver11').querySelector('img').src = gifter + "/lutins/lutin11.jpg";
-            document.getElementById('giver12').querySelector('img').src = gifter + "/lutins/lutin12.jpg";
+            document.getElementById('giver11').querySelector('img').src = gifter + "/lutins/lutin11.png";
+            document.getElementById('giver12').querySelector('img').src = gifter + "/lutins/lutin12.png";
 
             document.getElementById('reciever2').querySelector('img').src = gifter + "/" + "gifted2.png";
-            document.getElementById('giver21').querySelector('img').src =  gifter + "/lutins/lutin21.jpg";
-            document.getElementById('giver22').querySelector('img').src =  gifter + "/lutins/lutin22.jpg";
+            document.getElementById('giver21').querySelector('img').src =  gifter + "/lutins/lutin21.png";
+            document.getElementById('giver22').querySelector('img').src =  gifter + "/lutins/lutin22.png";
 
             document.getElementById('reciever3').querySelector('img').src =  gifter + "/" + "gifted3.png";
-            document.getElementById('giver31').querySelector('img').src = gifter + "/lutins/lutin31.jpg";
-            document.getElementById('giver32').querySelector('img').src =  gifter + "/lutins/lutin32.jpg";
+            document.getElementById('giver31').querySelector('img').src = gifter + "/lutins/lutin31.png";
+            document.getElementById('giver32').querySelector('img').src =  gifter + "/lutins/lutin32.png";
 
             // const bulleCliqueContainer = document.getElementById('bulle-finale');
             // bulleCliqueContainer.querySelector('img').classList.remove('hidden');
@@ -217,6 +253,9 @@
         // JavaScript code to toggle the blinking image visibility
         setInterval(function() {
             blinkingImage.style.display = (blinkingImage.style.display === 'none') ? 'block' : 'none';
+        }, 500); // 500ms interval for blinking
+        setInterval(function() {
+            blinkingArrow.style.display = (blinkingArrow.style.display === 'none') ? 'block' : 'none';
         }, 500); // 500ms interval for blinking
     </script>
 </body>
